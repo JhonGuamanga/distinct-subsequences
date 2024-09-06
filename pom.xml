@@ -8,9 +8,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.appgate.dtp</groupId>
-    <artifactId>code-refactoring</artifactId>
+    <artifactId>distinct-subsequences</artifactId>
     <version>1.0.0</version>
-    <name>code-refactoring</name>
+    <name>distinct-subsequences</name>
 
     <!-- ........................................................................................................... -->
     <!-- Project parent -->

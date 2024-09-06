@@ -3,7 +3,6 @@ package com.appgate.dtp.distinct.subsequence.adapters.in.calculatesubsequence.re
 import com.appgate.dtp.distinct.subsequence.domain.calculatesubsequence.DistinctSubsequences;
 import com.appgate.dtp.distinct.subsequence.domain.calculatesubsequence.Sequence;
 import com.appgate.dtp.shared.utils.SelfValidating;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,11 +18,9 @@ public class CalculateSubsequenceRequest implements SelfValidating {
     public static final String SUBSEQUENCE_TO_SEARCH_NULL_MESSAGE = "'subsequenceToSearch' field must not be null";
 
     @NotNull(message = SEQUENCE_NULL_MESSAGE)
-    @NotEmpty
     private String sequence;
 
     @NotNull(message = SUBSEQUENCE_TO_SEARCH_NULL_MESSAGE)
-    @NotEmpty
     private String subsequenceToSearch;
 
     public void validateSelf() {

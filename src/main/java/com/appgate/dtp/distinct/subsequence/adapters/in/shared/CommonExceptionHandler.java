@@ -1,5 +1,7 @@
 package com.appgate.dtp.distinct.subsequence.adapters.in.shared;
 
+import com.appgate.dtp.distinct.subsequence.domain.calculatesubsequence.InvalidSequenceLengthException;
+import com.appgate.dtp.distinct.subsequence.domain.calculatesubsequence.InvalidSubsequenceToSearchLengthException;
 import com.appgate.dtp.shared.utils.AppgateLogger;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
@@ -77,5 +79,19 @@ public class CommonExceptionHandler {
         ErrorDetail errorDetail = new ErrorDetail(null, null, exception.getMessage());
         errorDetailList.add(errorDetail);
         return new ErrorMessage(BAD_REQUEST_MSG, errorDetailList);
+    }
+
+    @ExceptionHandler(InvalidSequenceLengthException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorMessage handleInvalidSequenceLengthException(InvalidSequenceLengthException exception) {
+        log.warn("InvalidSequenceLengthException: ", exception.getMessage());
+        return new ErrorMessage(exception.getMessage());
+    }
+
+    @ExceptionHandler(InvalidSubsequenceToSearchLengthException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorMessage handleInvalidSubsequenceToSearchLengthException(InvalidSubsequenceToSearchLengthException exception) {
+        log.warn("InvalidSubsequenceToSearchLengthException: ", exception.getMessage());
+        return new ErrorMessage(exception.getMessage());
     }
 }
