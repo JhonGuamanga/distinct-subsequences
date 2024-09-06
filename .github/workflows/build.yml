@@ -1,0 +1,18 @@
+name: Build workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      skipTest:
+        description: 'Disable Test Execution'
+        required: true
+        default: 'false'
+        type: string
+
+jobs:
+
+  makefile_workflow:
+    if: github.event_name == 'workflow_dispatch'
+    uses: AppGate-TFP/devops-pipelines-github-actions/.github/workflows/MakefileAppPipelineJobs.yml@main
+    with:
+      skipTest: ${{ github.event.inputs.skipTest }}            # Pass true to skip tests execution (default is false, tests will run)

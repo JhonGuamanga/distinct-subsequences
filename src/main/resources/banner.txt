@@ -1,0 +1,9 @@
+${AnsiColor.BRIGHT_MAGENTA}
+     _                            _                  ____ _____ ____
+    / \   _ __  _ __   __ _  __ _| |_ ___           |  _ \_   _|  _ \
+   / _ \ | '_ \| '_ \ / _` |/ _` | __/ _ \   _____  | | | || | | |_) |
+  / ___ \| |_) | |_) | (_| | (_| | ||  __/  |_____| | |_| || | |  __/
+ /_/   \_\ .__/| .__/ \__, |\__,_|\__\___|          |____/ |_| |_|
+         |_|   |_|    |___/ ${AnsiColor.GREEN}  ${info.app.name} (${info.app.version})
+                            ${AnsiColor.GREEN}  Powered by Spring Boot (${spring-boot.version})
+${AnsiColor.DEFAULT}

@@ -1,0 +1,33 @@
+app: {{project_name}}
+
+type: {{project_namespace}}
+
+logging:
+  enabled: true
+
+imagePullSecrets:
+  - name: docker-registry-creds
+
+containerPort: {{project_port}}
+
+autoscaling:
+  qa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 1
+    targetCPU: 90
+  prod:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 1
+    targetCPU: 90
+
+resources:
+  qa:
+    limits:
+      cpu: 300m
+      memory: 300Mi
+  prod:
+    limits:
+      cpu: 500m
+      memory: 600Mi

@@ -1,0 +1,35 @@
+name: Deployment workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Environment (Check https://appgateinc.atlassian.net/l/c/ByxL1m48)'
+        required: true
+
+      type:
+        type: choice
+        description: 'Deployment Type'
+        required: true
+        options:
+          - INITIAL-DEPLOYMENT
+          - UPGRADE
+          - ROLLBACK
+          - DRY-RUN-TEMPLATE
+        default: 'INITIAL-DEPLOYMENT'
+
+      image:
+        description: 'Image name'
+        required: true
+
+jobs:
+  Application_Deployment_Workflow:
+    uses: AppGate-TFP/devops-pipelines-github-actions/.github/workflows/DeploymentPipeline.yaml@main
+    with:
+      ENVIRONMENT: ${{ github.event.inputs.env }}
+      env: ${{ github.event.inputs.env }}
+      image: ${{ github.event.inputs.image }}
+      repo: ${{ github.event.repository.name }}
+      type: ${{ github.event.inputs.type }}
+    secrets:
+      SECRET: ${{ secrets.SECRETS }}
