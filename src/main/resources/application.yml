@@ -4,4 +4,4 @@ info:
     version: @project.version@
 
 server:
-  port: {{project_port}}
+  port: 8080

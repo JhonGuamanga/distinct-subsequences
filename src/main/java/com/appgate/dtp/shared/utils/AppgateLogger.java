@@ -23,6 +23,10 @@ public class AppgateLogger {
         return new AppgateLogger(classname);
     }
 
+    public void warn(String message, Object... objects) {
+        log.warn(message, objects);
+    }
+
     public void debug(String message) {
         log.debug(message);
     }
