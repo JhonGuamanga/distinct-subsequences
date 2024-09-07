@@ -1,6 +1,6 @@
-app: {{project_name}}
+app: distinct-subsequences
 
-type: {{project_namespace}}
+type: practices
 
 logging:
   enabled: true
@@ -8,7 +8,7 @@ logging:
 imagePullSecrets:
   - name: docker-registry-creds
 
-containerPort: {{project_port}}
+containerPort: 8080
 
 autoscaling:
   qa:

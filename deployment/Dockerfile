@@ -3,7 +3,7 @@ FROM devops-tools.dtp.appgate.com:9443/base/alpine-jdk17:1.0.1
 ARG BUILD_DATE
 ARG BUILD_VERSION
 
-ENV JAR={{project_name}}.jar
+ENV JAR=distinct-subsequences.jar
 
 WORKDIR /app
 
