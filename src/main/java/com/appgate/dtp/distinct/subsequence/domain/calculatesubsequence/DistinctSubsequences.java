@@ -3,15 +3,12 @@ package com.appgate.dtp.distinct.subsequence.domain.calculatesubsequence;
 import com.appgate.dtp.shared.utils.SelfValidating;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.experimental.SuperBuilder;
 
 @Getter
 @EqualsAndHashCode
-@SuperBuilder(setterPrefix = "with")
 public class DistinctSubsequences implements SelfValidating {
-    private Sequence sequence;
-    private Sequence subsequenceToSearch;
-    private SubsequencesNumber subsequencesNumber;
+    private final Sequence sequence;
+    private final Sequence subsequenceToSearch;
 
     public DistinctSubsequences(Sequence sequence, Sequence subsequenceToSearch) {
         this.sequence = sequence;
